@@ -29,18 +29,12 @@ const marker = new mapboxgl.Marker({
 
 function getLocation(position) {
     let { latitude, longitude } = position.coords;
-
     const actualPosition = [longitude, latitude];
    
-    map.easeTo({
-        center: actualPosition,
-        pitch: 50,
-        zoom: 16,
-        duration: 1000, // Duración de la transición en milisegundos
-    });
-    
-    // Add market to user's location
-    marker.setLngLat(actualPosition).addTo(map);
+    if ('geolocation' in navigator){
+       map.setCenter(actualPosition);
+        marker.setLngLat(actualPosition).addTo(map);
+    }
 }
 
 function errorHandler(error) {

@@ -2,4 +2,4 @@
 
 ## Demo
 
-Click [here](https://rosanunezrivera.github.io/gps/) to test the application
+Click [here](https://github.com/RosaNunezRivera/gps.git) to test the application
